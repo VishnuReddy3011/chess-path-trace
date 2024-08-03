@@ -39,6 +39,9 @@
 .box.active::before {
     background-color: rgb(106, 106, 123); 
 }
+.box.active2::before {
+    background-color: rgb(212, 22, 60); 
+}
 
 .white {
     background-color: #EEEED2;

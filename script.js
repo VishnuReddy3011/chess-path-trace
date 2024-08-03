@@ -63,6 +63,8 @@ const updateKnight = (r, c, flag) => {
 
 const refreshBishop = () => {
     if(prevBishop) {
+        const box = board.children[prevBishop.row].children[prevBishop.col];
+        box.classList.remove("active2");
         let minLeft = Math.min(prevBishop.row, prevBishop.col), minRight = Math.min(prevBishop.row, 7 - prevBishop.col);
         let prev_r1 = prevBishop.row - minLeft, prev_c1 = prevBishop.col - minLeft;
         let prev_r2 = prevBishop.row - minRight, prev_c2 = prevBishop.col + minRight;
@@ -72,12 +74,16 @@ const refreshBishop = () => {
 
 const refreshRook = () => {
     if(prevRook) {
+        const box = board.children[prevRook.row].children[prevRook.col];
+        box.classList.remove("active2");
         updateRook(prevRook.col, prevRook.row, 0);
     }
 };
 
 const refreshKnight = () => {
     if(prevKnight) {
+        const box = board.children[prevKnight.row].children[prevKnight.col];
+        box.classList.remove("active2");
         updateKnight(prevKnight.row, prevKnight.col, 0);
     }
 };
@@ -140,4 +146,6 @@ board.addEventListener("click", e => {
             knight();
             break;
     }
+    const box = board.children[row].children[col];
+    box.classList.add("active2");
 });
