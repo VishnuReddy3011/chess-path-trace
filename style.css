@@ -1,0 +1,63 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.board {
+    border: 1px solid black
+}
+
+.row {
+    display: flex;
+}
+
+.box {
+    height: 70px;
+    width: 70px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box::before {
+    content: '';
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.box.active::before {
+    background-color: rgb(106, 106, 123); 
+}
+
+.white {
+    background-color: #EEEED2;
+}
+
+.green {
+    background-color: #769656;
+}
+
+@media screen and (max-width : 480px) {
+    .box {
+        height: 40px;
+        width: 40px;
+    }
+    .box::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: absolute;
+    }
+}
